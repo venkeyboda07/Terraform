@@ -1,0 +1,228 @@
+import React from 'react';
+
+// Header Component: Displays the brand name and navigation links.
+const Header = () => (
+  <header className="bg-white shadow-sm py-4 rounded-b-lg">
+    <div className="container mx-auto px-4 flex justify-between items-center">
+      {/* Brand Name */}
+      <h1 className="text-3xl font-extrabold text-pink-600">RadiantGlow</h1>
+      {/* Navigation Links */}
+      <nav>
+        <ul className="flex space-x-6 text-lg">
+          <li><a href="#" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">Shop All</a></li>
+          <li><a href="#" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">Best Sellers</a></li>
+          <li><a href="#" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">About Us</a></li>
+          <li><a href="#" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+);
+
+// Hero Section Component: The main banner with a compelling headline, description, and call to action.
+const HeroSection = () => (
+  <section className="relative bg-gradient-to-br from-pink-50 to-white py-20 lg:py-32 overflow-hidden rounded-xl mx-4 my-8 shadow-lg">
+    <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between z-10 relative">
+      <div className="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
+        {/* Main Headline */}
+        <h2 className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6 animate-fade-in-up">
+          Unlock Your Skin's Natural Radiance
+        </h2>
+        {/* Sub-headline/Description */}
+        <p className="text-xl text-gray-700 mb-10 max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-200">
+          Discover expertly crafted skincare solutions that nourish, protect, and reveal your healthiest, most beautiful skin.
+        </p>
+        {/* Call to Action Button */}
+        <a href="#" className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 animate-fade-in-up delay-400">
+          Shop Our Collections
+        </a>
+      </div>
+      <div className="lg:w-1/2 flex justify-center lg:justify-end animate-fade-in-right">
+        {/* Placeholder for a high-quality lifestyle image of radiant skin */}
+        <img
+          src="https://placehold.co/600x400/FFC0CB/FFFFFF?text=Radiant+Skin+Lifestyle"
+          alt="Woman with radiant, glowing skin"
+          className="rounded-3xl shadow-2xl max-w-full h-auto border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-500"
+          onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found"; }}
+        />
+      </div>
+    </div>
+    {/* Decorative background elements for visual flair */}
+    <div className="absolute top-0 left-0 w-full h-full opacity-40 pointer-events-none">
+      <div className="absolute w-80 h-80 bg-pink-200 rounded-full blur-3xl opacity-60 top-10 -left-20 transform rotate-12"></div>
+      <div className="absolute w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-60 bottom-0 -right-30 transform -rotate-24"></div>
+    </div>
+  </section>
+);
+
+// Featured Products Section: Showcases popular or new products.
+const FeaturedProducts = () => {
+  // Array of product data. Replace image URLs with your actual product photos.
+  const products = [
+    { id: 1, name: 'Hydrating Serum', price: '$49.99', image: 'https://placehold.co/300x300/F0F8FF/333333?text=Hydrating+Serum', description: 'Deeply moisturizes and plumps skin for a dewy finish.' },
+    { id: 2, name: 'Daily Cleanser', price: '$24.99', image: 'https://placehold.co/300x300/F0F8FF/333333?text=Daily+Cleanser', description: 'Gently removes impurities and makeup without stripping moisture.' },
+    { id: 3, name: 'Revitalizing Moisturizer', price: '$39.99', image: 'https://placehold.co/300x300/F0F8FF/333333?text=Revitalizing+Moisturizer', description: 'Restores skin\'s natural barrier, leaving it soft and supple.' },
+    { id: 4, name: 'Brightening Eye Cream', price: '$34.99', image: 'https://placehold.co/300x300/F0F8FF/333333?text=Eye+Cream', description: 'Visibly reduces dark circles and puffiness for brighter eyes.' },
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50 rounded-xl mx-4 my-8 shadow-lg">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold text-gray-800 mb-12">Our Bestsellers</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {products.map(product => (
+            <div key={product.id} className="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 border border-gray-100">
+              {/* Product Image */}
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-48 object-contain rounded-xl mb-4" // Use object-contain to prevent cropping
+                onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/300x300/cccccc/ffffff?text=Product+Image"; }}
+              />
+              {/* Product Name */}
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h3>
+              {/* Product Description */}
+              <p className="text-gray-600 text-sm mb-4 min-h-[40px]">{product.description}</p> {/* Min height to prevent layout shift */}
+              {/* Product Price */}
+              <p className="text-3xl font-extrabold text-pink-600 mb-4">{product.price}</p>
+              {/* Add to Cart Button */}
+              <a href="#" className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-medium py-3 px-8 rounded-full transition-colors duration-200 shadow-md">
+                Add to Cart
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Why Choose Us Section: Highlights key brand values or benefits.
+const WhyChooseUs = () => (
+  <section className="py-20 bg-gradient-to-br from-white to-pink-100 rounded-xl mx-4 my-8 shadow-lg">
+    <div className="container mx-auto px-4 text-center">
+      <h2 className="text-4xl font-bold text-gray-800 mb-12">Why Choose RadiantGlow?</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Natural Ingredients Feature */}
+        <div className="p-8 rounded-2xl bg-white shadow-lg border border-pink-200 transform hover:-translate-y-2 transition-transform duration-300">
+          <div className="text-pink-500 text-6xl mb-6 flex justify-center items-center">
+            {/* SVG Icon for Leaf (Natural) */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-leaf"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.5 2 6.5A10 10 0 0 1 8.39 20H11Z"></path><path d="M13 8H4c-2.8 0-4 2.3-4 5 0 1.5.5 3 2 4.5C6.5 22 10 22 12 22h2"></path></svg>
+          </div>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-3">Natural Ingredients</h3>
+          <p className="text-gray-600 text-lg">Formulated with the purest botanicals and earth-derived compounds for gentle yet effective care.</p>
+        </div>
+        {/* Science-Backed Feature */}
+        <div className="p-8 rounded-2xl bg-white shadow-lg border border-pink-200 transform hover:-translate-y-2 transition-transform duration-300">
+          <div className="text-pink-500 text-6xl mb-6 flex justify-center items-center">
+            {/* SVG Icon for Flask (Science) */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-flask-conical"><path d="M10 16.5l-6.5 6.5H17l6.5-6.5Z"></path><path d="M12 16.5V3.5"></path><path d="M8 2h8"></path></svg>
+          </div>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-3">Science-Backed</h3>
+          <p className="text-gray-600 text-lg">Developed with leading dermatologists and rigorously tested for proven efficacy and safety.</p>
+        </div>
+        {/* Ethical & Cruelty-Free Feature */}
+        <div className="p-8 rounded-2xl bg-white shadow-lg border border-pink-200 transform hover:-translate-y-2 transition-transform duration-300">
+          <div className="text-pink-500 text-6xl mb-6 flex justify-center items-center">
+            {/* SVG Icon for Heart Handshake (Ethical) */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart-handshake"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5 5 0 0 0 17.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5 5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M12 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 10h-2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path></svg>
+          </div>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-3">Ethical & Cruelty-Free</h3>
+          <p className="text-gray-600 text-lg">We are deeply committed to ethical sourcing practices and proudly ensure our products are never tested on animals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// Testimonials Section: Displays customer reviews and ratings.
+const Testimonials = () => {
+  // Array of review data.
+  const reviews = [
+    { id: 1, name: 'Sarah L.', text: 'My skin has never looked better! RadiantGlow products are a complete game-changer for my routine.', rating: 5 },
+    { id: 2, name: 'Mark T.', text: 'The Hydrating Serum is incredible. My skin feels so incredibly soft and hydrated all day long.', rating: 5 },
+    { id: 3, name: 'Jessica R.', text: 'Finally, skincare that truly works for my sensitive skin. I highly recommend RadiantGlow to everyone!', rating: 4 },
+  ];
+
+  return (
+    <section className="py-20 bg-pink-50 rounded-xl mx-4 my-8 shadow-lg">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold text-gray-800 mb-12">What Our Customers Say</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {reviews.map(review => (
+            <div key={review.id} className="bg-white rounded-2xl shadow-lg p-8 text-center border border-pink-100 transform hover:shadow-2xl transition-shadow duration-300">
+              {/* Review Text */}
+              <p className="text-gray-700 italic mb-6 text-lg">"{review.text}"</p>
+              {/* Star Rating */}
+              <div className="flex justify-center mb-4">
+                {[...Array(review.rating)].map((_, i) => (
+                  <svg key={i} className="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568L24 9.748l-6 5.856L19.336 24 12 20.207 4.664 24 6 15.604 0 9.748l8.332-1.593L12 .587z"/></svg>
+                ))}
+              </div>
+              {/* Customer Name */}
+              <p className="font-bold text-gray-800 text-lg">- {review.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Newsletter Signup Section: Encourages users to subscribe for updates.
+const NewsletterSignup = () => (
+  <section className="py-20 bg-pink-200 rounded-xl mx-4 my-8 shadow-lg">
+    <div className="container mx-auto px-4 text-center">
+      <h2 className="text-4xl font-bold text-gray-800 mb-6">Stay Connected!</h2>
+      <p className="text-xl text-gray-700 mb-10">
+        Join our newsletter for exclusive offers, new product alerts, and expert skincare tips delivered straight to your inbox.
+      </p>
+      {/* Newsletter Subscription Form */}
+      <form className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6">
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          className="p-4 rounded-full border-2 border-pink-400 focus:ring-4 focus:ring-pink-500 focus:border-transparent outline-none w-full sm:w-96 max-w-lg text-lg shadow-md"
+        />
+        <button
+          type="submit"
+          className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 text-lg"
+        >
+          Subscribe Now
+        </button>
+      </form>
+    </div>
+  </section>
+);
+
+// Footer Component: Contains copyright information and social media links.
+const Footer = () => (
+  <footer className="bg-gray-900 text-white py-12 rounded-t-lg">
+    <div className="container mx-auto px-4 text-center text-sm">
+      <p className="mb-4">&copy; {new Date().getFullYear()} RadiantGlow. All rights reserved.</p>
+      <div className="flex justify-center space-x-6">
+        <a href="#" className="hover:text-pink-400 transition-colors text-base">Privacy Policy</a>
+        <a href="#" className="hover:text-pink-400 transition-colors text-base">Terms of Service</a>
+        <a href="#" className="hover:text-pink-400 transition-colors text-base">FAQ</a>
+      </div>
+    </div>
+  </footer>
+);
+
+// Main App Component: Assembles all other components to form the complete homepage.
+export default function App() {
+  return (
+    <div className="font-sans antialiased text-gray-900 bg-white min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">
+        <HeroSection />
+        <FeaturedProducts />
+        <WhyChooseUs />
+        <Testimonials />
+        <NewsletterSignup />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+

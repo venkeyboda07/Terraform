@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockton Hyderabad Zoners - Crypto & Stock News</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light grey background */
+            color: #333;
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #2c3e50, #34495e); /* Dark blue-gray gradient */
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .owner-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #fff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+            margin: 0 1rem;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .owner-name:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .news-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .index-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        .index-card:hover {
+            transform: scale(1.02);
+        }
+        .index-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .index-change {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .positive {
+            color: #27ae60; /* Green */
+        }
+        .negative {
+            color: #e74c3c; /* Red */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Owner Names -->
+    <header class="header-bg">
+        <div class="container mx-auto px-6 md:px-12 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
+                Stockton Hyderabad Zoners
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-6 opacity-90">
+                Your Premier Source for Crypto & Stock Market Insights
+            </p>
+            <div class="mt-6 flex flex-wrap justify-center items-center">
+                <span class="owner-name">Karan</span>
+                <span class="owner-name">Vinay</span>
+                <span class="owner-name">Sai Kiran</span>
+                <span class="owner-name">Ravi Teja</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-6 md:px-12 flex justify-center space-x-8 text-lg">
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium rounded-md px-3 py-2 transition duration-300">Home</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium rounded-md px-3 py-2 transition duration-300">Crypto News</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium rounded-md px-3 py-2 transition duration-300">Stock News</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium rounded-md px-3 py-2 transition duration-300">Analysis</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium rounded-md px-3 py-2 transition duration-300">Indices</a> <!-- Added for quick access -->
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium rounded-md px-3 py-2 transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gray-50 text-center">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Stay Ahead of the Market Curve</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Unbiased, real-time news and in-depth analysis on the ever-evolving world of stocks and cryptocurrencies.
+            </p>
+            <a href="#" class="btn-primary inline-block">Read Latest News</a>
+        </div>
+    </section>
+
+    <!-- Indian Market Indices Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Indian Market Indices</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Nifty 50 Index Card -->
+                <div class="index-card">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">NIFTY 50</h3>
+                    <p class="index-value">25,050.90</p>
+                    <p class="index-change positive">+257.65 (1.04%)</p>
+                    <span class="text-xs text-gray-500 block mt-2">As of June 20, 2025</span>
+                </div>
+                <!-- Sensex Index Card -->
+                <div class="index-card">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">BSE SENSEX</h3>
+                    <p class="index-value">82,203.52</p>
+                    <p class="index-change positive">+841.65 (1.03%)</p>
+                    <span class="text-xs text-gray-500 block mt-2">As of June 20, 2025</span>
+                </div>
+                <!-- Nifty Bank Index Card -->
+                <div class="index-card">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">NIFTY BANK</h3>
+                    <p class="index-value">56,087.65</p>
+                    <p class="index-change positive">+510.20 (0.92%)</p>
+                    <span class="text-xs text-gray-500 block mt-2">As of June 20, 2025</span>
+                </div>
+                <!-- India VIX Index Card -->
+                <div class="index-card">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">INDIA VIX</h3>
+                    <p class="index-value">13.6525</p>
+                    <p class="index-change negative">-0.6025 (4.23%)</p>
+                    <span class="text-xs text-gray-500 block mt-2">As of June 20, 2025</span>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="btn-primary inline-block">View All Indian Indices</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cryptocurrency Indices Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Global Cryptocurrency Indices</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- CoinMarketCap 100 Index Card -->
+                <div class="index-card">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">CMC 100 Index</h3>
+                    <p class="index-value">$200.01</p>
+                    <p class="index-change positive">+0.29%</p>
+                    <span class="text-xs text-gray-500 block mt-2">Tracks Top 100 Cryptos</span>
+                </div>
+                <!-- CoinShares-Compass Top 10 Crypto Market Index Card -->
+                <div class="index-card">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">COINTEN Index</h3>
+                    <p class="index-value">3437.11</p>
+                    <p class="index-change negative">-0.50% (1 Day)</p>
+                    <span class="text-xs text-gray-500 block mt-2">Tracks Top 10 Cryptos</span>
+                </div>
+                <!-- CoinDesk 20 Index Card -->
+                <div class="index-card">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">CoinDesk 20 Index</h3>
+                    <p class="index-value">3049.62</p>
+                    <p class="index-change negative">-0.29%</p>
+                    <span class="text-xs text-gray-500 block mt-2">Top Digital Assets Performance</span>
+                </div>
+                 <!-- Bitcoin Dominance Index Card -->
+                 <div class="index-card">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">Bitcoin Dominance</h3>
+                    <p class="index-value">64.1%</p>
+                    <p class="index-change positive">+0.69% (24H)</p>
+                    <span class="text-xs text-gray-500 block mt-2">BTC Market Share</span>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="btn-primary inline-block">Explore All Crypto Indices</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Crypto News Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Latest Cryptocurrency News</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Crypto News Card 1 -->
+                <div class="news-card bg-gray-50 rounded-xl shadow-md overflow-hidden border border-gray-100">
+                    <img src="https://placehold.co/600x400/8e44ad/FFFFFF?text=Bitcoin+Update" alt="Bitcoin Price Surge" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Bitcoin Hits New All-Time High Amid Institutional Inflow</h3>
+                        <p class="text-gray-600 text-sm mb-4">Market analysts believe large institutional investments are driving the latest BTC rally.</p>
+                        <span class="text-xs text-gray-500 block mb-3">June 20, 2025 | Crypto Market</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            Read More
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Crypto News Card 2 -->
+                <div class="news-card bg-gray-50 rounded-xl shadow-md overflow-hidden border border-gray-100">
+                    <img src="https://placehold.co/600x400/27ae60/FFFFFF?text=Ethereum+Upgrade" alt="Ethereum Upgrade" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Ethereum Scaling Solutions Gain Traction Post-Upgrade</h3>
+                        <p class="text-gray-600 text-sm mb-4">Layer-2 networks are showing significant improvements in transaction speeds and costs.</p>
+                        <span class="text-xs text-gray-500 block mb-3">June 19, 2025 | Blockchain Tech</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            Read More
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Crypto News Card 3 -->
+                <div class="news-card bg-gray-50 rounded-xl shadow-md overflow-hidden border border-gray-100">
+                    <img src="https://placehold.co/600x400/e67e22/FFFFFF?text=NFT+Market" alt="NFT Market Trends" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">NFT Market Sees Resurgence with New Utility-Focused Projects</h3>
+                        <p class="text-gray-600 text-sm mb-4">Beyond art, NFTs are being integrated into gaming, real estate, and digital identity.</p>
+                        <span class="text-xs text-gray-500 block mb-3">June 18, 2025 | Digital Assets</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            Read More
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Stock Headlines Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Top Stock Headlines</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Stock News Card 1 -->
+                <div class="news-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/600x400/34495e/FFFFFF?text=Tech+Stocks" alt="Tech Stocks Rally" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Tech Giants Lead Market Rally as Q2 Earnings Beat Expectations</h3>
+                        <p class="text-gray-600 text-sm mb-4">Major technology companies report strong quarterly results, boosting investor confidence.</p>
+                        <span class="text-xs text-gray-500 block mb-3">June 20, 2025 | Equity Markets</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            Read More
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stock News Card 2 -->
+                <div class="news-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/600x400/c0392b/FFFFFF?text=Interest+Rates" alt="Interest Rate Impact" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Central Bank Hints at Rate Cuts: Impact on Global Markets</h3>
+                        <p class="text-gray-600 text-sm mb-4">Anticipated interest rate adjustments could significantly influence bond and equity performance.</p>
+                        <span class="text-xs text-gray-500 block mb-3">June 19, 2025 | Macroeconomics</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            Read More
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stock News Card 3 -->
+                <div class="news-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                    <img src="https://placehold.co/600x400/1abc9c/FFFFFF?text=Green+Energy" alt="Green Energy Investment" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Green Energy Sector Attracts Record Investment Capital</h3>
+                        <p class="text-gray-600 text-sm mb-4">Renewable energy companies are seeing unprecedented funding for new projects and expansion.</p>
+                        <span class="text-xs text-gray-500 block mb-3">June 18, 2025 | Sustainable Investing</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            Read More
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Newsletter Section -->
+    <section class="py-16 bg-blue-700 text-white text-center">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Daily Market Insights Directly to Your Inbox</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-8">
+                Subscribe to our newsletter for curated news, analysis, and expert commentary.
+            </p>
+            <form class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                <input type="email" placeholder="Enter your email" class="py-3 px-6 rounded-full w-full md:w-80 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300" required>
+                <button type="submit" class="btn-primary">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400 py-10 px-6 md:px-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Stockton Hyderabad Zoners</h3>
+                <p class="text-sm">
+                    Empowering your financial journey with timely and accurate market information.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                <ul class="text-sm space-y-2">
+                    <li><a href="#" class="hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Crypto News</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Stock News</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Analysis</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Founders</h3>
+                <ul class="text-sm space-y-2">
+                    <li><span class="font-semibold">Karan</span></li>
+                    <li><span class="font-semibold">Vinay</span></li>
+                    <li><span class="font-semibold">Sai Kiran</span></li>
+                    <li><span class="font-semibold">Ravi Teja</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+            &copy; 2024 Stockton Hyderabad Zoners. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
